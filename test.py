@@ -1,4 +1,4 @@
-__author__ = 'Alex'
+__author__ = 'Alexander Koelbl'
 
 from unittest import TestCase
 from CSVReader import CSVReader
