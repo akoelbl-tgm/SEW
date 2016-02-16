@@ -1,6 +1,8 @@
 __author__ = 'Alexander Koelbl'
 import json
+import sys
 from PySide.QtGui import *
+
 from CSVReader import CSVReader
 from MyView import Ui_MainWindow
 
@@ -25,3 +27,9 @@ class Control(QMainWindow):
             self.view.ausgabeText.setText(json.dumps(content, indent=4))
         except Exception as e:
             self.view.ausgabeText.setText(e.strerror)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    con = Control()
+    con.show()
+    sys.exit(app.exec_())
