@@ -1,8 +1,8 @@
 __author__ = 'Alexander Koelbl'
 import sys
-
 from PySide.QtGui import *
-from Jenkins import Control
+import Control
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

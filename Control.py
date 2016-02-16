@@ -1,10 +1,8 @@
 __author__ = 'Alexander Koelbl'
 import json
-
 from PySide.QtGui import *
-from Jenkins.CSVReader import CSVReader
+from CSVReader import CSVReader
 from MyView import Ui_MainWindow
-
 
 class Control(QMainWindow):
 
