@@ -1,8 +1,5 @@
 import csv
 
-from CSVReader import CSVReader
-from MyView import Ui_MainWindow
-
 class Control():
     def __init__(self):
         self.read = None
