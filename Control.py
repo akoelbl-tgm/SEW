@@ -1,35 +1,19 @@
-__author__ = 'Alexander Koelbl'
-import json
-import sys
-from PySide.QtGui import *
+import csv
 
 from CSVReader import CSVReader
 from MyView import Ui_MainWindow
 
-class Control(QMainWindow):
+class Control():
+    def __init__(self):
+        self.read = None
+        self.delimiter = None
 
-    def __init__(self, parent=None, *args, **kwargs):
-        super().__init__(parent, *args, **kwargs)
-        self.view = Ui_MainWindow()
-        self.view.setupUi(self)
-        self.verbindeButtons()
+    def fill(self):
+        text = ''
+        delimiter = ';'
 
-    def verbindeButtons(self):
-        self.view.oeffneFileButton.clicked.connect(self.oeffneFile)
+        with open('testfile.csv', newline='') as f:
+            reader = csv.reader(f, delimiter=';', quotechar=' ')
 
-    def oeffneFile(self):
-        try:
-            path = self.view.filenameEingabeTextfeld.text()
-            reader = CSVReader(path)
-            content = reader.read()
-            delimiter = reader.delimiter()
-            self.view.delimiterLabel.setText("Delimiter: " + delimiter)
-            self.view.ausgabeText.setText(json.dumps(content, indent=4))
-        except Exception as e:
-            self.view.ausgabeText.setText(e.strerror)
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    con = Control()
-    con.show()
-    sys.exit(app.exec_())
+            for row in reader:
+                text += str(row)+'\n'

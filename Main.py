@@ -1,4 +1,3 @@
-__author__ = 'Alexander Koelbl'
 import sys
 from PySide.QtGui import *
 import Control

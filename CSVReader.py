@@ -1,4 +1,3 @@
-__author__ = 'Alexander Koelbl'
 import csv
 
 class CSVReader(object):
