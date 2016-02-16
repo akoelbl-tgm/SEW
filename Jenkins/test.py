@@ -1,7 +1,9 @@
 __author__ = 'Alexander Koelbl'
 
 from unittest import TestCase
-from CSVReader import CSVReader
+
+from Jenkins.CSVReader import CSVReader
+
 
 class PythonUnittests(TestCase):
 
