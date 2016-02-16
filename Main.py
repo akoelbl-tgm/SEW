@@ -1,7 +1,8 @@
 __author__ = 'Alexander Koelbl'
+import sys
 from PySide.QtGui import *
 import Control
-import sys
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
